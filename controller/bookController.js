@@ -12,9 +12,9 @@ class BookController {
     async getBookByAuthor(req, res) {
         try {
           const author = req.query.author;
-         console.log(author);
+        
           const books = await bookService.getBookByAuthor(author);
-          console.log(books);
+         
           res.json(books);
         } catch (error) {
           console.error('Error fetching books by author:', error);

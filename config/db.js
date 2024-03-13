@@ -10,8 +10,8 @@ const url = "mongodb://localhost:27017/book-library"
 
 try {
     mongoose.connect(
-        url,
-        { useNewUrlParser: true, useUnifiedTopology: true }
+        url
+        
     )
 } catch (e) {
     console.log("could not connect");

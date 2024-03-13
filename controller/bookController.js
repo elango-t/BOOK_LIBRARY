@@ -9,16 +9,18 @@ class BookController {
             res.status(500).send('Error occurred in getting data from database' + err);
         }
     }
-
     async getBookByAuthor(req, res) {
         try {
-            const book = await bookService.getBookByAuthor(req.params.author);
-            if (!book) return res.status(404).send('Book not found');
-            res.json(book);
-        } catch (err) {
-            res.status(500).send('Error occurred in getting data from database' + err);
+          const author = req.query.author;
+         console.log(author);
+          const books = await bookService.getBookByAuthor(author);
+          console.log(books);
+          res.json(books);
+        } catch (error) {
+          console.error('Error fetching books by author:', error);
+          res.status(500).send('Server Error');
         }
-    }
+      };
 
     async createBook(req, res) {
         try {

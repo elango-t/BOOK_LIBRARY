@@ -6,11 +6,11 @@ class BookService {
     }
 
     async getBookByAuthor(author) {
-        return await Book.find(author);
+        return await Book.find({ author: { $regex: new RegExp(author, 'i') } });
     }
 
-    async createBook(title, author,description,image,pages) {
-        const newBook = new Book({ title, author,description,image,pages });
+    async createBook(title, author,pages) {
+        const newBook = new Book({ title, author,pages });
         return await newBook.save();
     }
 

@@ -10,9 +10,9 @@ class BookController {
         }
     }
 
-    async getBookById(req, res) {
+    async getBookByAuthor(req, res) {
         try {
-            const book = await bookService.getBookById(req.params.id);
+            const book = await bookService.getBookByAuthor(req.params.author);
             if (!book) return res.status(404).send('Book not found');
             res.json(book);
         } catch (err) {

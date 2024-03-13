@@ -5,8 +5,8 @@ class BookService {
         return await Book.find();
     }
 
-    async getBookById(id) {
-        return await Book.findById(id);
+    async getBookByAuthor(author) {
+        return await Book.find(author);
     }
 
     async createBook(title, author,pages) {

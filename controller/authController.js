@@ -1,4 +1,4 @@
-const userService = require('../server/userService');
+const userService = require('../sevices/userService');
 
 exports.login = async (req, res) => {
     try {
@@ -6,7 +6,7 @@ exports.login = async (req, res) => {
         
         const user = await userService.userLogin(username, password);
         if (user) {
-            
+
             res.json({ status: true, message: "Login successful" });
         } else {
             res.status(401).json({ status: false, message: "Invalid credentials" });

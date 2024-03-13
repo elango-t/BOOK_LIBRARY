@@ -9,8 +9,8 @@ class BookService {
         return await Book.findById(id);
     }
 
-    async createBook(title, author) {
-        const newBook = new Book({ title, author });
+    async createBook(title, author,pages) {
+        const newBook = new Book({ title, author,pages });
         return await newBook.save();
     }
 

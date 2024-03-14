@@ -18,7 +18,9 @@ class BookService {
         const book = await Book.findById(id);
         if (!book) return null;
 
-        book.isbn = updatedData.isbn;
+        book.pages = updatedData.pages;
+        book.description = updatedData.description;
+        book.image = updatedData.image;
         book.title = updatedData.title;
         book.author = updatedData.author;
 
@@ -26,7 +28,7 @@ class BookService {
     }
 
     async deleteBook(id) {
-        return await Book.findByIdAndDelete(id);
+        return await Book.findByIdAndDelete( id);
     }
 }
 

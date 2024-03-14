@@ -10,10 +10,10 @@ router.post('/login', authController.login);
 
 
 router.get('/', bookController.getAllBooks);
-router.get('/:id', bookController.getBookById);
+router.get('/:author', bookController.getBookByAuthor);
 router.post('/create', bookController.createBook);
 router.patch('/:id', bookController.updateBook);
-router.delete('/:id', bookController.deleteBook);
+router.delete('/:deleteid', bookController.deleteBook);
 
 
  module.exports=router;
